@@ -1,0 +1,93 @@
+target-version = "py39"
+line-length = 100
+indent-width = 4
+
+[format]
+indent-style = "space"
+quote-style = "double"
+docstring-code-format = true
+skip-magic-trailing-comma = false
+line-ending = "lf"
+
+[lint]
+fixable = ["ALL"]
+unfixable = []
+select = [
+	"A",
+	"B",
+	"C4",
+	"C90",
+	"D",
+	"DTZ",
+	"E",
+	"F",
+	"FA",
+	"I",
+	"ISC",
+	"ICN",
+	"N",
+	"PERF",
+	"PGH",
+	"PIE",
+	"PLC",
+	"PLE",
+	"PLR",
+	"PLW",
+	"PT",
+	"PTH",
+	"PYI",
+	"RET",
+	"RUF",
+	"SLF",
+	"T10",
+	"T20",
+	"UP",
+	"W",
+]
+ignore = [
+	"B009",
+	"B010",
+	"D100",
+	"D101",
+	"D102",
+	"D103",
+	"D104",
+	"D105",
+	"D106",
+	"D107",
+	"D401",
+	"D415",
+	"PLR2004",
+	"UP038",
+	"D203",
+	"D205",
+	"D212",
+]
+extend-safe-fixes = ["UP006", "UP007", "UP013", "UP014"]
+
+[lint.per-file-ignores]
+"*.ipynb" = ["FA", "T20"]
+"test_*.py" = ["SLF"]
+
+[lint.isort]
+combine-as-imports = true
+force-single-line = true
+force-sort-within-sections = true
+known-local-folder = ["relog"]
+lines-after-imports = 2
+order-by-type = false
+
+[lint.mccabe]
+max-complexity = 20
+
+[lint.pycodestyle]
+max-line-length = 120
+
+[lint.pylint]
+max-returns = 10
+max-args = 15
+max-branches = 15
+max-statements = 50
+
+[lint.pyupgrade]
+keep-runtime-typing = false
